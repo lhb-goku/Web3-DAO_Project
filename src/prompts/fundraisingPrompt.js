@@ -15,7 +15,8 @@ Check the following rules:
 
 Your response must be in JSON with the following fields:
 {
-  "allowed": true | false,
-  "reason": "short explanation why it is allowed or blocked"
+  "recommendation": "approved | rejected",
+  "fraud_score": 0-100,
+  "key_reasons": ["3 short explanation why it is allowed or rejected"]
 }
 `;

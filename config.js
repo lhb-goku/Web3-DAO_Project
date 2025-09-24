@@ -19,7 +19,7 @@ const config = {
     apiKey: process.env.GEMINI_API_KEY,
   },
   contracts: {
-    usdt: process.env.USDT_ADDRESSES, // hỗ trợ nhiều contract address
+    usdt: process.env.CONTRACT_ADDRESSES, // hỗ trợ nhiều contract address
   },
   testPrivateKey: process.env.TEST_PRIVATE_KEY, // private key dùng để test (nên là account testnet)
 };

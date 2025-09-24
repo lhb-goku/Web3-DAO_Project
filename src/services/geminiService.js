@@ -40,7 +40,9 @@ export async function analyzeFundraisingProposal(text, imageBase64) {
 
     if (!resultText) {
       return {
-        allowed: false,
+        recommendation: "rejected",
+        fraud_score: 0,
+        key_reasons: ["Gemini returned empty or unexpected response"],
         reason: "Gemini returned empty or unexpected response",
       };
     }
@@ -55,7 +57,11 @@ export async function analyzeFundraisingProposal(text, imageBase64) {
     try {
       parsed = JSON.parse(resultText);
     } catch (e) {
-      parsed = { allowed: false, reason: resultText };
+      parsed = {
+        recommendation: "rejected",
+        fraud_score: 0,
+        key_reasons: [resultText],
+      };
     }
 
     return parsed;
